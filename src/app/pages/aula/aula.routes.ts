@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { AulaComponent } from './aula.component';
 import { MaterialesComponent } from './materiales/materiales.component';
 import { DetalleMaterialComponent } from './detalle-material/detalle-material.component';
-import { AvisosComponent } from './avisos/avisos.component';
 
 export const AULA_ROUTES: Routes = [
   {
