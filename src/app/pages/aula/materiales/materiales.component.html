@@ -1,6 +1,38 @@
 <h3>Materiales disponibles</h3>
+
+<p>Orden seleccionado: {{ orden$ | async }}</p>
+<p>Tipo seleccionado: {{ tipo$ | async }}</p>
+
+<p>
+  Ordenar:
+  <a routerLink="/aula/materiales" [queryParams]="{ orden: 'asc' }">Orden ascendente</a> ·
+  <a routerLink="/aula/materiales" [queryParams]="{ orden: 'desc' }">Orden descendente</a>
+</p>
+
+<p>
+  Tipo:
+  <a routerLink="/aula/materiales" [queryParams]="{ tipo: 'pdf' }">PDF</a> ·
+  <a routerLink="/aula/materiales" [queryParams]="{ tipo: 'video' }">Vídeo</a>
+</p>
+
+<p>
+  Filtrar sin perder el orden:
+  <a [routerLink]="[]" [queryParams]="{ tipo: 'pdf' }" queryParamsHandling="merge">Solo PDF</a> ·
+  <a [routerLink]="[]" [queryParams]="{ tipo: 'video' }" queryParamsHandling="merge">Solo vídeo</a>
+</p>
+
+<p>
+  <a routerLink="/aula/avisos" queryParamsHandling="preserve">Ir a Avisos conservando los parámetros</a>
+</p>
+
 <ul>
   <li><a [routerLink]="['/aula/materiales', 1]">Material 1</a></li>
   <li><a [routerLink]="['/aula/materiales', 7]">Material 7</a></li>
   <li><a [routerLink]="['/aula/materiales', 12]">Material 12</a></li>
 </ul>
+
+<p>
+  <a [routerLink]="['/aula/materiales', 12]" [queryParams]="{ origen: 'destacados' }">
+    Material destacado
+  </a>
+</p>
